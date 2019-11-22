@@ -24,6 +24,7 @@ type Body struct {
 type Result struct {
 	ReturnCode     string `json:"return_code"`
 	ResultCode     string `json:"result_code"`
+	ReturnMsg      string `json:"return_msg"`
 	Channel        string `json:"channel"`
 	PartnerCode    string `json:"partner_code"`
 	FullName       string `json:"full_name"`

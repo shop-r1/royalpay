@@ -3,6 +3,7 @@ package royalpay
 import (
 	"bytes"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -84,5 +85,11 @@ func (p *Pay) execPut(uri string, body *Body) (*Result, error) {
 	rb, _ = ioutil.ReadAll(resp.Body)
 	var result Result
 	err = json.Unmarshal(rb, &result)
+	if err != nil {
+		return nil, err
+	}
+	if result.ReturnCode != "SUCCESS" {
+		return nil, errors.New(result.ReturnMsg)
+	}
 	return &result, err
 }
