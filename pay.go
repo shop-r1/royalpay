@@ -25,6 +25,12 @@ func NewPay(partner, credential string) *Pay {
 	}
 }
 
+func (p *Pay) Redirect(u, redirect string) string {
+	p.makeSign()
+	u += "?redirect=" + redirect + "&" + p.query
+	return u
+}
+
 func (p *Pay) makeSign() {
 	nonceStr := GetRandomString(24)
 	timeStr := getTime()
