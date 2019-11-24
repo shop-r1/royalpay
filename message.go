@@ -19,6 +19,7 @@ type Body struct {
 	Channel     Channel  `json:"channel"`
 	NotifyUrl   string   `json:"notify_url"`
 	Operator    string   `json:"operator"`
+	Redirect    string   `json:"redirect"`
 }
 
 type Result struct {
