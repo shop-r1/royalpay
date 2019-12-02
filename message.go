@@ -23,18 +23,19 @@ type Body struct {
 }
 
 type Result struct {
-	ReturnCode     string `json:"return_code"`
-	ResultCode     string `json:"result_code"`
-	ReturnMsg      string `json:"return_msg"`
-	Channel        string `json:"channel"`
-	PartnerCode    string `json:"partner_code"`
-	FullName       string `json:"full_name"`
-	PartnerName    string `json:"partner_name"`
-	OrderId        string `json:"order_id"`
-	PartnerOrderId string `json:"partner_order_id"`
-	CodeUrl        string `json:"code_url,omitempty"`
-	QrcodeImg      string `json:"qrcode_img,omitempty"`
-	PayUrl         string `json:"pay_url"`
+	ReturnCode     string      `json:"return_code"`
+	ResultCode     string      `json:"result_code"`
+	ReturnMsg      string      `json:"return_msg"`
+	Channel        string      `json:"channel"`
+	PartnerCode    string      `json:"partner_code"`
+	FullName       string      `json:"full_name"`
+	PartnerName    string      `json:"partner_name"`
+	OrderId        string      `json:"order_id"`
+	PartnerOrderId string      `json:"partner_order_id"`
+	CodeUrl        string      `json:"code_url,omitempty"`
+	QrcodeImg      string      `json:"qrcode_img,omitempty"`
+	PayUrl         string      `json:"pay_url"`
+	Params         interface{} `json:"params"`
 }
 
 var ErrCode = map[string]string{
